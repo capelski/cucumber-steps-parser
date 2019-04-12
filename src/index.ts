@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 
 const emptyStringRegex = /^\s*\n?$/;
-const cucumberSentenceRegex = /^\s*(Given|When|Then)\(['"](.*)['"].*$/;
+const cucumberSentenceRegex = /^\s*(Given|When|Then)\(['"\/](.*)['"\/],.*$/;
 
 // TODO Individually test this function with cucumber
 /*
