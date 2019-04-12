@@ -1,0 +1,29 @@
+{
+    "name": "cucumber-steps-parser",
+    "version": "1.0.0",
+    "description": "A parser to get the cucumber sentences from step definition files",
+    "main": "src/index.ts",
+    "scripts": {
+        "start": "node dist/index.js",
+        "build": "rm -rf dist && tsc -d",
+        "test": "rm -rf dist/features && tsc -p tsconfig-base.json && find src/features -type f | grep -i .feature$ | xargs -i cp {} dist/features && cucumber-js -- --require dist/features/**/*.feature",
+        "prettify": "prettier --write src/**/*.ts"
+    },
+    "keywords": [
+        "Cucumber",
+        "gherkin",
+        "parser"
+    ],
+    "author": "Carles Capellas <capellas.carles@gmail.com>",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/chai": "^4.1.7",
+        "@types/cucumber": "^4.0.5",
+        "@types/node": "^11.12.1",
+        "awesome-typescript-loader": "^5.2.1",
+        "chai": "^4.2.0",
+        "cucumber": "^5.1.0",
+        "prettier": "^1.16.4",
+        "typescript": "^3.3.4000"
+    }
+}
