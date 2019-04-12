@@ -16,5 +16,5 @@ When(/^requiring the cucumber sentences contained in the file "(.*)"$/, function
 
 Then(/^the returned cucumber sentences should be:$/, function(dataTable) {
     const expectedSentences = flattenArray(dataTable.rawTable);
-    assert.equal(cucumberSentences, expectedSentences);
+    assert.deepEqual(cucumberSentences, expectedSentences);
 });

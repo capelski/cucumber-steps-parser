@@ -1,5 +1,9 @@
 import { Given, When, Then } from 'cucumber';
 
-Given('cucumber string given sample', () => {});
-When('cucumber string when sample', () => {});
-Then('cucumber string then sample', () => {});
+Given('cucumber single quote string given sample', () => {});
+When('cucumber single quote string when sample', () => {});
+Then('cucumber single quote string then sample', () => {});
+
+Given("cucumber double quote string given sample", () => {});
+When("cucumber double quote string when sample", () => {});
+Then("cucumber double quote string then sample", () => {});
