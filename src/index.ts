@@ -3,28 +3,18 @@ import * as fs from 'fs';
 const emptyStringRegex = /^\s*\n?$/;
 const cucumberSentenceRegex = /^\s*(Given|When|Then)\(['"\/](.*)['"\/],.*$/;
 
-// TODO Individually test this function with cucumber
-/*
-    [ null, undefined, '', '           ', '           \n', 'test', '     test']
- */
-export const removeEmptyStrings = (strings: string[]) =>
-    strings.filter(_string => _string && !emptyStringRegex.test(_string));
-
-// TODO Individually test this function with cucumber
-/*
-    ['   ', ' test', '        test         ', 'test          ']
- */
-export const trimStrings = (strings: string[]) => strings.map(line => line.trim());
+export const isNonEmptyString = (_string: string) =>
+    !!_string && !emptyStringRegex.test(_string);
 
 export const getCucumberSentencesFromContent = (content: string): string[] => {
     const lines = content.split(/\r?\n/);
-    const nonEmptyLines = removeEmptyStrings(lines);
-    const trimmedLines = trimStrings(nonEmptyLines);
+    const nonEmptyLines = lines.filter(isNonEmptyString);
+    const trimmedLines = nonEmptyLines.map(line => line.trim());
     const cucumberSentences = trimmedLines.reduce((cucumberSentences, nextLine) => {
         const cucumberMatch = nextLine.match(cucumberSentenceRegex);
         if (cucumberMatch) {
             const cucumberSentence = cucumberMatch[2];
-            cucumberSentences = cucumberSentences.concat(cucumberSentence);
+            cucumberSentences.push(cucumberSentence);
         }
         return cucumberSentences;
     }, [] as string[]);
