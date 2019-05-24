@@ -1,4 +1,5 @@
--   Template literals (`)
+-   Separate line parsing
+-   Test Given, When and Then in comments
 -   Recursively parse a folder
 -   Write a readme.md
 -   Publish an npm package

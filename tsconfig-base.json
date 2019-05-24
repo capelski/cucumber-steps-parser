@@ -7,6 +7,6 @@
         "outDir": "./dist/",
         "target": "es6"
     },
-    "include": ["src", "test-data"],
+    "include": ["src"],
     "types": ["node"]
 }
