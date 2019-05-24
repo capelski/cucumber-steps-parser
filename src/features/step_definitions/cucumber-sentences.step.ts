@@ -10,7 +10,7 @@ const flattenArray = (array: (any[])[]) => {
 };
 
 When(/^requiring the cucumber sentences contained in the file "(.*)"$/, function(filePath: string) {
-    filePath = path.resolve(__dirname, '..', filePath);
+    filePath = path.resolve(__dirname, '..', filePath + '.js');
     cucumberSentences = getCucumberSentencesFromFile(filePath);
 });
 

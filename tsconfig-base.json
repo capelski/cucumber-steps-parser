@@ -4,12 +4,8 @@
         "module": "commonjs",
         "esModuleInterop": true,
         "moduleResolution": "node",
-        "outDir": "./dist/",
+        "outDir": "./dist/"
     },
-    "include": [
-        "src/"
-    ],
-    "types": [
-        "node"
-    ]
+    "include": ["src", "test-data"],
+    "types": ["node"]
 }
