@@ -4,11 +4,13 @@ const emptyStringRegex = /^\s*\n?$/;
 const simpleCucumberRegexs = [
     /(Given|When|Then)\('([^']*)',/,
     /(Given|When|Then)\("([^"]*)",/,
+    /(Given|When|Then)\(`([^`]*)`,/,
     /(Given|When|Then)\(\/([^\/]*)\/,/
 ];
 const escapedCucumberRegexs = [
     /(Given|When|Then)\('(([^']*(\\')?)*)'\s*,/,
     /(Given|When|Then)\("(([^"]*(\\")?)*)"\s*,/,
+    /(Given|When|Then)\(`(([^`]*(\\`)?)*)`\s*,/,
     /(Given|When|Then)\(\/(([^\/]*(\\\/)?)*)\/\s*,/
 ];
 

@@ -5,41 +5,51 @@ Feature: Cucumber sentences parsing
    Scenario: Single quote cucumber sentences
       When requiring the cucumber sentences contained in the file "../../test-data/single-quote-cucumber-sentences"
       Then the returned cucumber sentences should be:
-         | single quote string given sample                        |
-         | single quote string when sample                         |
-         | single quote string then sample                         |
-         | single quote string given sample with "double quotes"   |
-         | single quote string when sample with "double quotes"    |
-         | single quote string then sample with "double quotes"    |
-         | single quote string given sample with \'single quotes\' |
-         | single quote string when sample with \'single quotes\'  |
-         | single quote string then sample with \'single quotes\'  |
+         | Given single quote string                                       |
+         | When single quote string                                        |
+         | Then single quote string                                        |
+         | Given single quote string with \'single quotes\'                |
+         | When single quote string with \'single quotes\'                 |
+         | Then single quote string with \'single quotes\'                 |
+         | Given single quote string with single quotes after the sentence |
+         | When single quote string with single quotes after the sentence  |
+         | Then single quote string with single quotes after the sentence  |
 
    Scenario: Double quote cucumber sentences
       When requiring the cucumber sentences contained in the file "../../test-data/double-quote-cucumber-sentences"
       Then the returned cucumber sentences should be:
-         | double quote string given sample                        |
-         | double quote string when sample                         |
-         | double quote string then sample                         |
-         | double quote string given sample with 'single quotes'   |
-         | double quote string when sample with 'single quotes'    |
-         | double quote string then sample with 'single quotes'    |
-         | double quote string given sample with \"double quotes\" |
-         | double quote string when sample with \"double quotes\"  |
-         | double quote string then sample with \"double quotes\"  |
+         | Given double quote string                                       |
+         | When double quote string                                        |
+         | Then double quote string                                        |
+         | Given double quote string with \"double quotes\"                |
+         | When double quote string with \"double quotes\"                 |
+         | Then double quote string with \"double quotes\"                 |
+         | Given double quote string with double quotes after the sentence |
+         | When double quote string with double quotes after the sentence  |
+         | Then double quote string with double quotes after the sentence  |
+
+   Scenario: Template literal cucumber sentences
+      When requiring the cucumber sentences contained in the file "../../test-data/template-literal-cucumber-sentences"
+      Then the returned cucumber sentences should be:
+         | Given template literal string                                     |
+         | When template literal string                                      |
+         | Then template literal string                                      |
+         | Given template literal string with \`back sticks\`                |
+         | When template literal string with \`back sticks\`                 |
+         | Then template literal string with \`back sticks\`                 |
+         | Given template literal string with back sticks after the sentence |
+         | When template literal string with back sticks after the sentence  |
+         | Then template literal string with back sticks after the sentence  |
 
    Scenario: Simple RegEx sentences
       When requiring the cucumber sentences contained in the file "../../test-data/regex-cucumber-sentences"
       Then the returned cucumber sentences should be:
-         | regex given sample                      |
-         | regex when sample                       |
-         | regex then sample                       |
-         | regex given sample with 'single quotes' |
-         | regex when sample with 'single quotes'  |
-         | regex then sample with 'single quotes'  |
-         | regex given sample with "double quotes" |
-         | regex when sample with "double quotes"  |
-         | regex then sample with "double quotes"  |
-         | regex given sample with \/slashes\/     |
-         | regex when sample with \/slashes\/      |
-         | regex then sample with \/slashes\/      |
+         | Given regex                                 |
+         | When regex                                  |
+         | Then regex                                  |
+         | Given regex with \/slashes\/                |
+         | When regex with \/slashes\/                 |
+         | Then regex with \/slashes\/                 |
+         | Given regex with slashes after the sentence |
+         | When regex with slashes after the sentence  |
+         | Then regex with slashes after the sentence  |

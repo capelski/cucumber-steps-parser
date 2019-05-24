@@ -1,23 +1,22 @@
-// prettier-ignore
 import { Given, When, Then } from 'cucumber';
 
 // prettier-ignore
-Given("double quote string given sample", () => {});
+Given("Given double quote string", () => {});
 // prettier-ignore
-When("double quote string when sample", () => {});
+When("When double quote string", () => {});
 // prettier-ignore
-Then("double quote string then sample", () => {});
+Then("Then double quote string", () => {});
 
 // prettier-ignore
-Given("double quote string given sample with 'single quotes'", () => { console.log("More", "quotes"); });
+Given("Given double quote string with \"double quotes\"", () => {});
 // prettier-ignore
-When("double quote string when sample with 'single quotes'", () => { console.log("More", "quotes"); });
+When("When double quote string with \"double quotes\"", () => {});
 // prettier-ignore
-Then("double quote string then sample with 'single quotes'", () => { console.log("More", "quotes"); });
+Then("Then double quote string with \"double quotes\"", () => {});
 
 // prettier-ignore
-Given("double quote string given sample with \"double quotes\"", () => {});
+Given("Given double quote string with double quotes after the sentence", () => { console.log("More", "double quotes"); });
 // prettier-ignore
-When("double quote string when sample with \"double quotes\"", () => {});
+When("When double quote string with double quotes after the sentence", () => { console.log("More", "double quotes"); });
 // prettier-ignore
-Then("double quote string then sample with \"double quotes\"", () => {});
+Then("Then double quote string with double quotes after the sentence", () => { console.log("More", "double quotes"); });

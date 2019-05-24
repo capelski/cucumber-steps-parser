@@ -1,23 +1,16 @@
 import { Given, When, Then } from 'cucumber';
 
-Given(/regex given sample/, () => {});
-When(/regex when sample/, () => {});
-Then(/regex then sample/, () => {});
+Given(/Given regex/, () => {});
+When(/When regex/, () => {});
+Then(/Then regex/, () => {});
+
+Given(/Given regex with \/slashes\//, () => {});
+When(/When regex with \/slashes\//, () => {});
+Then(/Then regex with \/slashes\//, () => {});
 
 // prettier-ignore
-Given(/regex given sample with 'single quotes'/, () => { console.log('More', 'quotes'); });
+Given(/Given regex with slashes after the sentence/, () => { console.log(/More/, /slashes/); });
 // prettier-ignore
-When(/regex when sample with 'single quotes'/, () => { console.log('More', 'quotes'); });
+When(/When regex with slashes after the sentence/, () => { console.log(/More/, /slashes/); });
 // prettier-ignore
-Then(/regex then sample with 'single quotes'/, () => { console.log('More', 'quotes'); });
-
-// prettier-ignore
-Given(/regex given sample with "double quotes"/, () => { console.log("More", "quotes"); });
-// prettier-ignore
-When(/regex when sample with "double quotes"/, () => { console.log("More", "quotes"); });
-// prettier-ignore
-Then(/regex then sample with "double quotes"/, () => { console.log("More", "quotes"); });
-
-Given(/regex given sample with \/slashes\//, () => {});
-When(/regex when sample with \/slashes\//, () => {});
-Then(/regex then sample with \/slashes\//, () => {});
+Then(/Then regex with slashes after the sentence/, () => { console.log(/More/, /slashes/); });

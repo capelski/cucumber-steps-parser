@@ -1,10 +1,11 @@
 {
     "compilerOptions": {
-        "noImplicitAny": true,
-        "module": "commonjs",
         "esModuleInterop": true,
+        "module": "commonjs",
         "moduleResolution": "node",
-        "outDir": "./dist/"
+        "noImplicitAny": true,
+        "outDir": "./dist/",
+        "target": "es6"
     },
     "include": ["src", "test-data"],
     "types": ["node"]

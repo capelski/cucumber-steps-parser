@@ -1,23 +1,22 @@
-// prettier-ignore
 import { Given, When, Then } from 'cucumber';
 
 // prettier-ignore
-Given('single quote string given sample', () => {});
+Given('Given single quote string', () => {});
 // prettier-ignore
-When('single quote string when sample', () => {});
+When('When single quote string', () => {});
 // prettier-ignore
-Then('single quote string then sample', () => {});
+Then('Then single quote string', () => {});
 
 // prettier-ignore
-Given('single quote string given sample with "double quotes"', () => { console.log('More', 'quotes'); });
+Given('Given single quote string with \'single quotes\'', () => {});
 // prettier-ignore
-When('single quote string when sample with "double quotes"', () => { console.log('More', 'quotes'); });
+When('When single quote string with \'single quotes\'', () => {});
 // prettier-ignore
-Then('single quote string then sample with "double quotes"', () => { console.log('More', 'quotes'); });
+Then('Then single quote string with \'single quotes\'', () => {});
 
 // prettier-ignore
-Given('single quote string given sample with \'single quotes\'', () => { });
+Given('Given single quote string with single quotes after the sentence', () => { console.log('More', 'single quotes'); });
 // prettier-ignore
-When('single quote string when sample with \'single quotes\'', () => { });
+When('When single quote string with single quotes after the sentence', () => { console.log('More', 'single quotes'); });
 // prettier-ignore
-Then('single quote string then sample with \'single quotes\'', () => { });
+Then('Then single quote string with single quotes after the sentence', () => { console.log('More', 'single quotes'); });
