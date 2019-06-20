@@ -1,5 +1,5 @@
 {
-    "cucumberautocomplete.steps": ["src/**/__step-definitions__/*.step.js"],
+    "cucumberautocomplete.steps": ["src/**/__step-definitions__/*.step.ts"],
     "cucumberautocomplete.syncfeatures": "features/**/*.feature",
     "cucumberautocomplete.strictGherkinCompletion": true,
     "cSpell.words": ["Regexs"]

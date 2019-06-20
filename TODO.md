@@ -1,4 +1,6 @@
+-   Add linting
 -   Separate line parsing
+-   Multiline strings parsing
 -   Test Given, When and Then in comments
 -   Recursively parse a folder
 -   Write a readme.md
