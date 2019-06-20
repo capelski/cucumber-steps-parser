@@ -38,6 +38,9 @@ Feature: Cucumber sentences parsing
          | Given template literal string                                     |
          | When template literal string                                      |
          | Then template literal string                                      |
+         | Multiline\nGiven template literal string                          |
+         | Multiline\nWhen template literal string                           |
+         | Multiline\nThen template literal string                           |
          | Given template literal string with `back sticks`                  |
          | When template literal string with `back sticks`                   |
          | Then template literal string with `back sticks`                   |
@@ -63,12 +66,15 @@ Feature: Cucumber sentences parsing
       Given the file "separate-line-cucumber-sentences.ts" (inside the sentences-files folder)
       When requiring the cucumber sentences defined in the file
       Then the following cucumber sentences should be returned
-         | Given double quote string in a separate line |
-         | When double quote string in a separate line  |
-         | Then double quote string in a separate line  |
-         | Given single quote string in a separate line |
-         | When single quote string in a separate line  |
-         | Then single quote string in a separate line  |
-         | Given regex in a separate line               |
-         | When regex in a separate line                |
-         | Then regex in a separate line                |
+         | Given double quote string in a separate line     |
+         | When double quote string in a separate line      |
+         | Then double quote string in a separate line      |
+         | Given single quote string in a separate line     |
+         | When single quote string in a separate line      |
+         | Then single quote string in a separate line      |
+         | Given template literal string in a separate line |
+         | When template literal string in a separate line  |
+         | Then template literal string in a separate line  |
+         | Given regex in a separate line                   |
+         | When regex in a separate line                    |
+         | Then regex in a separate line                    |

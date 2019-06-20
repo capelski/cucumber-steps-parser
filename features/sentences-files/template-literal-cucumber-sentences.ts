@@ -8,6 +8,16 @@ When(`When template literal string`, () => {});
 Then(`Then template literal string`, () => {});
 
 // prettier-ignore
+Given(`Multiline
+Given template literal string`, () => {});
+// prettier-ignore
+When(`Multiline
+When template literal string`, () => {});
+// prettier-ignore
+Then(`Multiline
+Then template literal string`, () => {});
+
+// prettier-ignore
 Given(`Given template literal string with \`back sticks\``, () => {});
 // prettier-ignore
 When(`When template literal string with \`back sticks\``, () => {});

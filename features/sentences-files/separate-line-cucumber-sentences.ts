@@ -34,6 +34,22 @@ Then(
 
 // prettier-ignore
 Given(
+    `Given template literal string in a separate line`,
+    () => {}
+);
+// prettier-ignore
+When(
+    `When template literal string in a separate line`,
+    () => {}
+);
+// prettier-ignore
+Then(
+    `Then template literal string in a separate line`,
+    () => {}
+);
+
+// prettier-ignore
+Given(
     /Given regex in a separate line/,
     () => {}
 );
