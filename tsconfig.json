@@ -1,4 +1,12 @@
 {
-    "extends": "./tsconfig-base.json",
-    "exclude": ["src/features"]
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "outDir": "./dist/",
+        "target": "es6"
+    },
+    "include": ["src/index.ts"],
+    "types": ["node"]
 }

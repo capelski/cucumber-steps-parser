@@ -1,5 +1,5 @@
 import { When, Then } from 'cucumber';
-import { isNonEmptyString } from '../../index';
+import { isNonEmptyString } from '../index';
 import { assert } from 'chai';
 
 let result: boolean;

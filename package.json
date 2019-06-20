@@ -4,10 +4,10 @@
     "description": "A parser to get the cucumber sentences from step definition files",
     "main": "src/index.ts",
     "scripts": {
-        "start": "node dist/index.js",
         "build": "rm -rf dist && tsc -d",
-        "test": "rm -rf dist/features && tsc -p tsconfig-base.json && find src/features -type f | grep -i .feature$ | xargs -i cp {} dist/features && cucumber-js -- --require dist/features/**/*.feature",
-        "prettify": "prettier --write src/**/*.ts"
+        "prettify": "prettier --write src/**/*.ts",
+        "start": "node dist/index.js",
+        "test": "cucumber-js --require-module ts-node/register --require src/**/__step-definitions__/*.step.ts features/**/*.feature"
     },
     "keywords": [
         "Cucumber",
@@ -24,6 +24,7 @@
         "chai": "^4.2.0",
         "cucumber": "^5.1.0",
         "prettier": "^1.16.4",
+        "ts-node": "^8.3.0",
         "typescript": "^3.3.4000"
     }
 }

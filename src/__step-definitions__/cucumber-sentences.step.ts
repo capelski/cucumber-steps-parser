@@ -1,6 +1,6 @@
 import { When, Then } from 'cucumber';
 import path from 'path';
-import { getCucumberSentencesFromFile } from '../../index';
+import { getCucumberSentencesFromFile } from '../index';
 import { assert } from 'chai';
 
 let cucumberSentences: string[];
@@ -10,7 +10,7 @@ const flattenArray = (array: (any[])[]) => {
 };
 
 When(/^requiring the cucumber sentences contained in the file "(.*)"$/, function(filePath: string) {
-    filePath = path.resolve(__dirname, '..', '..', '..', 'test-sentences', filePath);
+    filePath = path.resolve(__dirname, '..', '..', 'features', 'test-sentences', filePath);
     cucumberSentences = getCucumberSentencesFromFile(filePath);
 });
 
