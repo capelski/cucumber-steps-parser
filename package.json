@@ -5,6 +5,7 @@
     "main": "src/index.ts",
     "scripts": {
         "build": "rm -rf dist && tsc -d",
+        "lint": "tslint -e 'node_modules/**' -p .",
         "prettify": "prettier --write src/**/*.ts",
         "start": "node dist/index.js",
         "test": "cucumber-js --require-module ts-node/register --require src/**/__step-definitions__/*.step.ts features/**/*.feature"
@@ -27,6 +28,8 @@
         "chai": "^4.2.0",
         "cucumber": "^5.1.0",
         "prettier": "^1.16.4",
-        "ts-node": "^8.3.0"
+        "ts-node": "^8.3.0",
+        "tslint": "^5.17.0",
+        "tslint-config-prettier": "^1.18.0"
     }
 }
