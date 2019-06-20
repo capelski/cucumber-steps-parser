@@ -1,5 +1,4 @@
 -   Add linting
--   Test Given, When and Then in comments
 -   Recursively parse a folder
 -   Write a readme.md
 -   Publish an npm package

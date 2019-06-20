@@ -14,11 +14,15 @@ Given(/^the file "([^.]+\.ts)" \(inside the sentences-files folder\)$/, function
     filePath = resolve(__dirname, '..', '..', '..', 'features', 'sentences-files', fileName);
 });
 
-When(/^requiring the cucumber sentences defined in the file$/, function() {
+When(/^the cucumber sentences defined in the file are required$/, function() {
     sentences = getCucumberSentences(filePath);
 });
 
-Then(/^the following cucumber sentences should be returned$/, function(dataTable) {
+Then(/^no cucumber sentences are returned$/, function() {
+    assert.deepEqual(sentences, []);
+});
+
+Then(/^the following cucumber sentences are returned$/, function(dataTable) {
     const expectedSentences = flattenArray(dataTable.rawTable);
     assert.deepEqual(sentences, expectedSentences);
 });
