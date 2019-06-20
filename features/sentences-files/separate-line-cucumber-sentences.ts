@@ -1,4 +1,4 @@
-import { Given, When, Then } from 'cucumber';
+import { Given, Then, When } from 'cucumber';
 
 // prettier-ignore
 Given(

@@ -1,4 +1,4 @@
-Feature: Cucumber sentences parsing
+Feature: Cucumber sentences file parsing
 
    The parser should correctly retrieve the cucumber sentences defined
    inside Given, When or Then calls for a given file

@@ -1,10 +1,7 @@
-import { Given, When, Then } from 'cucumber';
+import { Given, Then, When } from 'cucumber';
 
-// prettier-ignore
 Given('Given single quote string', () => {});
-// prettier-ignore
 When('When single quote string', () => {});
-// prettier-ignore
 Then('Then single quote string', () => {});
 
 // prettier-ignore

@@ -1,3 +1,2 @@
--   Recursively parse a folder
 -   Write a readme.md
 -   Publish an npm package

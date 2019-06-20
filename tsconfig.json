@@ -7,6 +7,7 @@
         "outDir": "./dist/",
         "target": "es6"
     },
-    "include": ["src/index.ts"],
+    "include": ["src"],
+    "exclude": ["src/**/__step-definitions__"],
     "types": ["node"]
 }

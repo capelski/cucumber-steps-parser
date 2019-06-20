@@ -1,10 +1,11 @@
-import * as fs from 'fs';
+import { existsSync, lstatSync, readdirSync, readFileSync } from 'fs';
+import { join } from 'path';
 import typescript from 'typescript';
 
-export const getCucumberSentences = (filePath: string) => {
+export const getFileCucumberSentences = (filePath: string) => {
     const sourceFile = typescript.createSourceFile(
         'N/A',
-        fs.readFileSync(filePath).toString(),
+        readFileSync(filePath).toString(),
         typescript.ScriptTarget.ESNext,
         false
     );
@@ -52,4 +53,30 @@ export const getCucumberSentences = (filePath: string) => {
     );
 
     return cucumberSentences;
+};
+
+export const getFolderCucumberSentences = (
+    folderPath: string,
+    recursive = false,
+    stepDefinitionRegEx = /^.*\.step\.ts$/
+): string[] => {
+    if (!existsSync(folderPath) || !lstatSync(folderPath).isDirectory()) {
+        console.log(`No directory was found at ${folderPath}`);
+        return [];
+    }
+
+    return readdirSync(folderPath).reduce(
+        (all, nextItem) => {
+            let sentences: string[] = [];
+            const itemPath = join(folderPath, nextItem);
+            const isDirectoryItem = lstatSync(itemPath).isDirectory();
+            if (!isDirectoryItem && nextItem.match(stepDefinitionRegEx)) {
+                sentences = getFileCucumberSentences(itemPath);
+            } else if (isDirectoryItem && recursive) {
+                sentences = getFolderCucumberSentences(itemPath, recursive);
+            }
+            return all.concat(sentences);
+        },
+        [] as string[]
+    );
 };

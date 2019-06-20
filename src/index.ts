@@ -1,1 +1,1 @@
-export { getCucumberSentences } from './lib/cucumber-sentences';
+export { getFileCucumberSentences, getFolderCucumberSentences } from './lib/cucumber-sentences';
