@@ -42,7 +42,11 @@ export const getFileCucumberSentences = (filePath: string) => {
                                 argument.kind === typescript.SyntaxKind.RegularExpressionLiteral
                         )
                         .map((argument: any) =>
-                            argument.text.replace(/^\//, '').replace(/\/$/, '')
+                            argument.text
+                                .replace(/^\/\^?/, '')
+                                .replace(/\$?\/$/, '')
+                                .replace(/\\"/g, '"')
+                                .replace(/\\'/g, "'")
                         );
                     sentences.push(...regexArguments);
                 }
