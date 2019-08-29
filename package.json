@@ -2,6 +2,10 @@
     "name": "cucumber-steps-parser",
     "version": "1.0.0",
     "description": "A parser to get the cucumber sentences from step definition files",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/L3bowski/cucumber-steps-parser.git"
+    },
     "main": "src/index.ts",
     "bin": {
         "cucumber-steps-parser": "./bin/cucumber-steps-parser"
@@ -14,6 +18,7 @@
         "build": "rm -rf dist && tsc -d",
         "lint": "tslint -e 'node_modules/**' -p .",
         "prettify": "prettier --write src/**/*.ts",
+        "prepublishOnly": "npm run build",
         "start": "node ./bin/cucumber-steps-parser",
         "test": "cucumber-js --require-module ts-node/register --require src/**/__step-definitions__/*.step.ts features/**/*.feature"
     },
