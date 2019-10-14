@@ -6,7 +6,7 @@
         "type": "git",
         "url": "git+https://github.com/L3bowski/cucumber-steps-parser.git"
     },
-    "main": "src/index.ts",
+    "main": "dist/index.js",
     "bin": {
         "cucumber-steps-parser": "./bin/cucumber-steps-parser"
     },
