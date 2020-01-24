@@ -1,17 +1,20 @@
-import * as yargs from 'yargs';
+import { argv } from 'yargs';
 import { getFolderCucumberSentences } from './lib/cucumber-sentences';
 
-const argv = yargs.argv;
-const path: string | undefined = argv._[0];
+const path = argv._[0] as string | undefined;
+const recursive = argv.recursive as boolean | undefined;
+const filenameRegExp = argv.filename as string | undefined;
 
 if (!path) {
-    console.log(`Usage: cucumber-steps-parser <path>
-E.g. cucumber-steps-parser /c/sage/git/etna/@sage/etna-cli`);
+    console.log(`Usage: cucumber-steps-parser <path> [--no-recursive] [--filename <filename_regex>]
+E.g. cucumber-steps-parser /c/company-name/project`);
     process.exit(1);
 } else {
     try {
-        // TODO Support recursive and stepDefinitionRegEx parameters
-        const sentences = getFolderCucumberSentences(path);
+        const sentences = getFolderCucumberSentences(path, {
+            filenameRegExp,
+            recursive
+        });
         console.log(sentences);
     } catch (error) {
         console.log(error);

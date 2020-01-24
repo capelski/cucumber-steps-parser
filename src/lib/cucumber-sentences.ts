@@ -60,7 +60,13 @@ export const getFileCucumberSentences = (filePath: string) => {
 };
 
 export interface ICrawlingOptions {
+    /**
+     * Whether the folders found in the given path are recursively crawled. Defaults to true
+     */
     recursive?: boolean;
+    /**
+     * Only the filenames matching this regular expression will be parsed. Defaults to typescript files only (`/^.*\.ts$/`)
+     */
     filenameRegExp?: RegExp | string;
 }
 

@@ -33,4 +33,8 @@ const sentences = getFolderCucumberSentences('path/to/your/project', {
 });
 ```
 
+```bash
+cucumber-steps-parser path/to/your/project --no-recursive --filename "^.*\.step\.ts$"
+```
+
 Have fun!
