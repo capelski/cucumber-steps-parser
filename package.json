@@ -1,6 +1,6 @@
 {
     "name": "cucumber-steps-parser",
-    "version": "1.0.3",
+    "version": "2.0.0",
     "description": "A parser to get the cucumber sentences from step definition files",
     "repository": {
         "type": "git",
