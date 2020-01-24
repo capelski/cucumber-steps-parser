@@ -11,7 +11,7 @@ E.g. cucumber-steps-parser /c/sage/git/etna/@sage/etna-cli`);
 } else {
     try {
         // TODO Support recursive and stepDefinitionRegEx parameters
-        const sentences = getFolderCucumberSentences(path, true);
+        const sentences = getFolderCucumberSentences(path);
         console.log(sentences);
     } catch (error) {
         console.log(error);

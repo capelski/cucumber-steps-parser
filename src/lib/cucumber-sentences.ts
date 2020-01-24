@@ -59,28 +59,33 @@ export const getFileCucumberSentences = (filePath: string) => {
     return cucumberSentences;
 };
 
+export interface ICrawlingOptions {
+    recursive?: boolean;
+    filenameRegExp?: RegExp | string;
+}
+
 export const getFolderCucumberSentences = (
     folderPath: string,
-    recursive = false,
-    stepDefinitionRegEx = /^.*\.step\.ts$/
+    options: ICrawlingOptions = {}
 ): string[] => {
     if (!existsSync(folderPath) || !lstatSync(folderPath).isDirectory()) {
         console.log(`No directory was found at ${folderPath}`);
         return [];
     }
 
-    return readdirSync(folderPath).reduce(
-        (all, nextItem) => {
-            let sentences: string[] = [];
-            const itemPath = join(folderPath, nextItem);
-            const isDirectoryItem = lstatSync(itemPath).isDirectory();
-            if (!isDirectoryItem && nextItem.match(stepDefinitionRegEx)) {
-                sentences = getFileCucumberSentences(itemPath);
-            } else if (isDirectoryItem && recursive) {
-                sentences = getFolderCucumberSentences(itemPath, recursive);
-            }
-            return all.concat(sentences);
-        },
-        [] as string[]
-    );
+    const recursiveCrawling = options.recursive === undefined || options.recursive;
+    const filenameRegExp = new RegExp(options.filenameRegExp || '^.*\\.ts$');
+
+    return readdirSync(folderPath).reduce<string[]>((all, nextItem) => {
+        const itemPath = join(folderPath, nextItem);
+        const isDirectoryItem = lstatSync(itemPath).isDirectory();
+
+        const sentences =
+            isDirectoryItem && recursiveCrawling
+                ? getFolderCucumberSentences(itemPath, options)
+                : !isDirectoryItem && nextItem.match(filenameRegExp)
+                ? getFileCucumberSentences(itemPath)
+                : [];
+        return all.concat(sentences);
+    }, []);
 };

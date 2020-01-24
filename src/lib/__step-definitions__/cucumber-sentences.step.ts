@@ -27,15 +27,16 @@ When(/^the cucumber sentences defined in the folder are required$/, () => {
     sentences = getFolderCucumberSentences(folderPath);
 });
 
-When(/^the cucumber sentences defined in the folder are recursively required$/, () => {
-    sentences = getFolderCucumberSentences(folderPath, true);
+When(/^the cucumber sentences defined in the folder are required without recursion$/, () => {
+    sentences = getFolderCucumberSentences(folderPath, { recursive: false });
 });
 
 When(
-    /^the cucumber sentences defined in the folder are required with "(.*)" step definition regex$/,
-    (stepDefinitionRegEx: string) => {
-        const customRegEx = new RegExp(stepDefinitionRegEx);
-        sentences = getFolderCucumberSentences(folderPath, false, customRegEx);
+    /^the cucumber sentences defined in the folder are required with "(.*)" filename RegExp$/,
+    (filenameRegExp: string) => {
+        sentences = getFolderCucumberSentences(folderPath, {
+            filenameRegExp
+        });
     }
 );
 

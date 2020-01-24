@@ -9,7 +9,6 @@ You can use it inside your application:
 ```javascript
 const { getFolderCucumberSentences } = require('cucumber-steps-parser');
 const sentences = getFolderCucumberSentences('path/to/your/project');
-console.log(sentences);
 ```
 
 And you can also run it from the terminal:
@@ -19,21 +18,19 @@ npm install --global cucumber-steps-parser
 cucumber-steps-parser path/to/your/project
 ```
 
-#### Remarks
+### Options
 
--   **Recursive crawling**: If you want cucumber-steps-parser to check subfolders, you must pass true as second parameter to the getFolderCucumberSentences function
--   **File naming convention**: By default, cucumber-steps-parser will only check files named \<file-name\>.step.ts. If you are using a different naming convention, you mast pass a regex as third parameter to the getFolderCucumberSentences function
+You can customize how cucumber-steps-parser finds the step definition files in your application through the following configuration parameters:
+
+-   **recursive**: Whether the folders found in the given path are recursively crawled. Defaults to true
+-   **filenameRegExp**: Only the filenames matching this regular expression will be parsed. Defaults to typescript files only (`/^.*\.ts$/`)
 
 ```javascript
 const { getFolderCucumberSentences } = require('cucumber-steps-parser');
-
-const recursiveCrawling = true;
-const stepDefinitionsFilenames = /.*\.ts$/;
-const sentences = getFolderCucumberSentences(
-    'path/to/your/project',
-    recursiveCrawling,
-    stepDefinitionsFilenames
-);
+const sentences = getFolderCucumberSentences('path/to/your/project', {
+    recursive: false,
+    filenameRegExp: /^.*\.step\.ts$/
+});
 ```
 
 Have fun!
