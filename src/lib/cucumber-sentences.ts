@@ -67,6 +67,7 @@ export const getFileCucumberSentences = (filePath: string) => {
             !ts.isExpressionStatement(statement) ||
             !ts.isCallExpression(statement.expression) ||
             statement.expression.arguments.length === 0 ||
+            !statement.expression.expression.getText(sourceFile) ||
             !statement.expression.expression.getText(sourceFile).match(/^(Given|When|Then)$/)
         ) {
             return;
