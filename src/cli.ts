@@ -1,7 +1,7 @@
 import { argv } from 'yargs';
 import { getFolderCucumberSentences } from './lib/cucumber-sentences';
 
-const path = argv._[0] as string | undefined;
+const path = argv._[0];
 const recursive = argv.recursive as boolean | undefined;
 const filenameRegExp = argv.filename as string | undefined;
 
@@ -15,7 +15,7 @@ E.g. cucumber-steps-parser /c/company-name/project`);
             filenameRegExp,
             recursive
         });
-        console.log(sentences);
+        console.log(JSON.stringify(sentences, null, 4));
     } catch (error) {
         console.log(error);
         process.exit(1);
