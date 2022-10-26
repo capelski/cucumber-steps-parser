@@ -1,1 +1,1 @@
-export { getFileCucumberSentences, getFolderCucumberSentences, ICucumberStepDetails as CucumberStepDetails } from './lib/cucumber-sentences';
+export { getFileCucumberSentences, getFolderCucumberSentences, ICucumberStepDetails } from './lib/cucumber-sentences';
