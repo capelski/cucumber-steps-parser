@@ -78,30 +78,22 @@ the following cucumber steps will be returned when parsing it (i.e. `cucumber-st
 ```json
 [
     {
-        "arguments": [
-            "myString"
-        ],
+        "arguments": ["myString"],
         "jsDocTags": [],
         "rawText": "/^my parametrized cucumber step {string}$/",
         "text": "my parametrized cucumber step {string}"
     },
     {
-        "arguments": [
-            "myNumber"
-        ],
+        "arguments": ["myNumber"],
         "jsDocTags": [],
         "rawText": "/^yet another parametrized step \"([0-9]*)\"$/",
         "text": "yet another parametrized step \"([0-9]*)\""
     },
     {
-        "arguments": [
-            "myNumber"
-        ],
-        "jsDocTags": [
-            "deprecated"
-        ],
+        "arguments": ["myNumber"],
+        "jsDocTags": ["deprecated"],
         "rawText": "once upon a time... in Hollywood",
         "text": "once upon a time... in Hollywood"
     }
-];
+]
 ```
