@@ -15,8 +15,8 @@ When("When double quote string with \"double quotes\"", () => {});
 Then("Then double quote string with \"double quotes\"", () => {});
 
 // prettier-ignore
-Given("Given double quote string with double quotes after the sentence", () => { console.log("More", "double quotes"); });
+Given("Given double quote string with double quotes after the step", () => { console.log("More", "double quotes"); });
 // prettier-ignore
-When("When double quote string with double quotes after the sentence", () => { console.log("More", "double quotes"); });
+When("When double quote string with double quotes after the step", () => { console.log("More", "double quotes"); });
 // prettier-ignore
-Then("Then double quote string with double quotes after the sentence", () => { console.log("More", "double quotes"); });
+Then("Then double quote string with double quotes after the step", () => { console.log("More", "double quotes"); });

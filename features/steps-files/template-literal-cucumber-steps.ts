@@ -25,8 +25,8 @@ When(`When template literal string with \`back sticks\``, () => {});
 Then(`Then template literal string with \`back sticks\``, () => {});
 
 // prettier-ignore
-Given(`Given template literal string with back sticks after the sentence`, () => { console.log(`More`, `back sticks`); });
+Given(`Given template literal string with back sticks after the step`, () => { console.log(`More`, `back sticks`); });
 // prettier-ignore
-When(`When template literal string with back sticks after the sentence`, () => { console.log(`More`, `back sticks`); });
+When(`When template literal string with back sticks after the step`, () => { console.log(`More`, `back sticks`); });
 // prettier-ignore
-Then(`Then template literal string with back sticks after the sentence`, () => { console.log(`More`, `back sticks`); });
+Then(`Then template literal string with back sticks after the step`, () => { console.log(`More`, `back sticks`); });

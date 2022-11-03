@@ -1,1 +1,2 @@
-export { getFileCucumberSentences, getFolderCucumberSentences, ICucumberStepDetails } from './lib/cucumber-sentences';
+export { getFileCucumberSteps, getFolderCucumberSteps } from './logic';
+export { ICucumberStep, IParsingOptions } from './types';
