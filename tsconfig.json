@@ -5,7 +5,8 @@
         "moduleResolution": "node",
         "noImplicitAny": true,
         "outDir": "./dist/",
-        "target": "es6"
+        "target": "es6",
+        "sourceMap": true,
     },
     "include": ["src"],
     "exclude": ["src/**/__step-definitions__"],
